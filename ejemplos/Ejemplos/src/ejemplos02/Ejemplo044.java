@@ -46,7 +46,6 @@ public class Ejemplo044 {
         System.out.println(cadena);
     }
     public static int obtenerMultiplicacion(int a, int b) {
-
         int operacion;
         operacion = a * b;
         return operacion;
