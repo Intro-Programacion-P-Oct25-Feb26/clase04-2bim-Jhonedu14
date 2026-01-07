@@ -17,6 +17,11 @@ public class Ejemplo03 {
                                          // obtenerSuma
         System.out.printf("El valor de la suma es: %d\n", valor);
         
+        System.out.printf(suma);
+        /* El Error sale por la variable suma en primer dato no esta declarada
+        la variable suma solo existe en la funcion obtenerSuma en la funcion 
+        main no existe esa variable y eso marca el error 
+        */
         // System.out.printf("El valor de la suma es: %d\n", obtenerSuma(10, 30));
     }
     
