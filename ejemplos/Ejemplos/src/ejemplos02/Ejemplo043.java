@@ -26,8 +26,6 @@ public class Ejemplo043 {
       arreglo en la misma posición, luego  ya con estos valores 
       se envían al método obtenerSuma para realizar la suma
      */
-    
-        
     }
         
     public static void obtenerSuma(int a, int b){
