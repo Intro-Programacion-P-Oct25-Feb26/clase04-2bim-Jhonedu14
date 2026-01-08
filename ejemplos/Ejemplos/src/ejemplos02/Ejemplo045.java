@@ -13,16 +13,16 @@ public class Ejemplo045 {
 
     public static void main(String[] args) {
         // 
-        int[][] arreglo1 = {{1, 2, 3}, {3, 2, 4}, {2, 6, 2}};
-        int[][] arreglo2 = {{1, 2, 3}, {2, 2, 2}, {3, 1, 2}};
-
+        int[][] arreglo1 = {{1, 2, 3}, {3, 2, 4}, {2, 6, 2}}; 
+        int[][] arreglo2 = {{1, 2, 3}, {2, 2, 2}, {3, 1, 2}}; 
         int[][] arreglo3 = llenarMatriz(arreglo1, arreglo2);
+        double[][] arreglo4 = llenarMatriz2(arreglo1, arreglo2);
 
         obtenerReporte(arreglo1);
         obtenerReporte(arreglo2);
         obtenerReporte(arreglo3);
+        obtenerReporteDos(arreglo4);
     }
-
     public static int[][] llenarMatriz(int[][] x, int[][] y) {
 
         int[][] z = new int[3][3];
@@ -31,11 +31,21 @@ public class Ejemplo045 {
                 z[i][j] = obtenerMultiplicacion(x[i][j], y[i][j]);
             }
         }
+        return z;
+    }
+    public static double[][] llenarMatriz2(int[][] bases, int[][] potencias) {
 
+        double[][] z = new double[3][3];
+        for (int i = 0; i < bases.length; i++) {
+            for (int j = 0; j < bases[i].length; j++) {
+                z[i][j] = obtenerpotencia(bases[i][j], potencias[i][j]);
+            }
+        }
         return z;
     }
 
     public static void obtenerReporte(int[][] arreglo1) {
+
         String cadena = "";
         for (int i = 0; i < arreglo1.length; i++) {
             for (int j = 0; j < arreglo1[i].length; j++) {
@@ -45,10 +55,29 @@ public class Ejemplo045 {
         }
         System.out.println(cadena);
     }
+
+    public static void obtenerReporteDos(double[][] arreglo) {
+
+        String cadena = "";
+        for (int i = 0; i < arreglo.length; i++) {
+            for (int j = 0; j < arreglo[i].length; j++) {
+                cadena = String.format("%s%.0f\t", cadena, arreglo[i][j]);
+            }
+            cadena = String.format("%s\n", cadena);
+        }
+        System.out.println(cadena);
+    }
+
     public static int obtenerMultiplicacion(int a, int b) {
-        int operacion;
-        operacion = a * b;
+        int operacion; 
+        operacion = a * b; 
         return operacion;
+    }
+
+    public static double obtenerpotencia(int base, int potencia) {
+        double resultado;
+        resultado = Math.pow(base, potencia);
+        return resultado;
     }
 }
 
